@@ -1,0 +1,36 @@
+[
+    {
+        "caption": "Preferences",
+        "mnemonic": "n",
+        "id": "preferences",
+        "children":
+        [
+            {
+                "caption": "Package Settings",
+                "mnemonic": "P",
+                "id": "package-settings",
+                "children":
+                [
+                    {
+                        "caption": "Commands",
+                        "children":
+                        [
+                            {
+                                "caption": "Commands – Default",
+                                "command": "commands_open",
+                                "args": {
+                                    "file": "${packages}/Default/Default.sublime-commands"
+                                }
+                            },
+                            {
+                                "caption": "Commands – User",
+                                "command": "commands_open"
+                            },
+                            { "caption": "-" }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

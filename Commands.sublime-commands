@@ -1,5 +1,12 @@
 [
   {
+    "caption": "Preferences: Commands - Default",
+    "command": "commands_open",
+    "args": {
+        "file": "${packages}/Default/Default.sublime-commands"
+    }
+  },
+  {
     "caption": "Preferences: Commands - User",
     "command": "commands_open"
   }
