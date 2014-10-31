@@ -1,4 +1,5 @@
 from os import path
+import json
 import sublime
 import sublime_plugin
 
@@ -16,5 +17,15 @@ class CommandsEventListener(sublime_plugin.EventListener):
         """
         # If the file is not a settings file, exit early
         filepath = view.file_name()
-        if not filepath.endswith('.sublime-settings'):
-            return
+        # if not filepath.endswith('.sublime-settings'):
+        #     return
+
+        # Load the current settings
+        # DEV: This extends User preferences on top of Default preferences
+        settings = sublime.load_settings('Preferences.sublime-settings')
+        commands = settings.get('commands', [])
+        commands_json = json.dumps(commands, indent=4)
+
+        # Write out the set of commands to our filepath
+        with open(COMMANDS_FULL_FILEPATH, 'w') as f:
+            f.write(commands_json)
