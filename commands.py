@@ -17,4 +17,8 @@ class CommandsOpenCommand(sublime_plugin.WindowCommand):
             shutil.copy(COMMANDS_SOURCE_FULL_FILEPATH, COMMANDS_FULL_FILEPATH)
 
         # Open the User commands file
-        self.window.open_file(COMMANDS_FULL_FILEPATH)
+        view = self.window.open_file(COMMANDS_FULL_FILEPATH)
+
+        # If the syntax is plain text, move to JSON
+        if view.settings().get('syntax') == path.join('Packages', 'Text', 'Plain text.tmLanguage'):
+            view.set_syntax_file(path.join('Packages', 'JavaScript', 'JSON.tmLanguage'))
