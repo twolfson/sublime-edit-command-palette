@@ -6,14 +6,15 @@ SUBLIME_ROOT = path.normpath(path.join(sublime.packages_path(), '..'))
 COMMANDS_FILEPATH = path.join('Packages', 'User', 'Commands.sublime-commands')
 COMMANDS_FULL_FILEPATH = path.join(SUBLIME_ROOT, COMMANDS_FILEPATH)
 
+COMMANDS_SOURCE_FULL_FILEPATH = path.abspath('default-prompt.json')
 
 class CommandsOpenCommand(sublime_plugin.WindowCommand):
     def run(self):
         """Open `Packages/User/Commands.sublime-commands` for custom definitions"""
-        # Open the User commands file
-        view = self.window.open_file(COMMANDS_FULL_FILEPATH)
-
-        # If it doesn't exist, provide a prompt
-        # TODO: For ST3, we might need to do this before opening the file
+        # If the User commands doesn't exist, provide a prompt
         if not path.exists(COMMANDS_FULL_FILEPATH):
-            view.
+            with open(COMMANDS_FULL_FILEPATH) as f:
+                f.write()
+
+        # Open the User commands file
+        self.window.open_file(COMMANDS_FULL_FILEPATH)
