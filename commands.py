@@ -7,6 +7,17 @@ SUBLIME_ROOT = path.normpath(path.join(sublime.packages_path(), '..'))
 COMMANDS_FILEPATH = path.join('Packages', 'User', 'Commands.sublime-commands')
 COMMANDS_FULL_FILEPATH = path.join(SUBLIME_ROOT, COMMANDS_FILEPATH)
 
+def update_settings():
+    # Load the current settings
+    # DEV: This extends User preferences on top of Default preferences
+    settings = sublime.load_settings('Preferences.sublime-settings')
+    commands = settings.get('commands', [])
+    commands_json = json.dumps(commands, indent=4)
+
+    # Write out the set of commands to our filepath
+    with open(COMMANDS_FULL_FILEPATH, 'w') as f:
+        f.write(commands_json)
+
 class CommandsEventListener(sublime_plugin.EventListener):
     def on_post_save(self, view):
         """
@@ -20,12 +31,5 @@ class CommandsEventListener(sublime_plugin.EventListener):
         # if not filepath.endswith('.sublime-settings'):
         #     return
 
-        # Load the current settings
-        # DEV: This extends User preferences on top of Default preferences
-        settings = sublime.load_settings('Preferences.sublime-settings')
-        commands = settings.get('commands', [])
-        commands_json = json.dumps(commands, indent=4)
-
-        # Write out the set of commands to our filepath
-        with open(COMMANDS_FULL_FILEPATH, 'w') as f:
-            f.write(commands_json)
+        # In
+        # DEV: Sublime Text does not have new Preferences loaded yet, wait for repopulation
