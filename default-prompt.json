@@ -1,10 +1,12 @@
 [
     // Define your custom Sublime commands here
-    // Format is the same as key bindings except swap `keys` for `caption`
-    // `args` is still optional
+    // Format is same as `key bindings` except replace `keys` with `caption`
     // {
+    //     // Name to show in Command Palette
     //     "caption": "File: New",
+    //     // Command to invoke
     //     "command": "new_file",
+    //     // Optional keyword arguments to provide to command
     //     "args": {"key": "value"}
     // }
 ]
