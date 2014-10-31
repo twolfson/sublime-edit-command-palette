@@ -14,8 +14,7 @@ class CommandsOpenCommand(sublime_plugin.WindowCommand):
         """Open `Packages/User/Commands.sublime-commands` for custom definitions"""
         # If the User commands doesn't exist, provide a prompt
         if not path.exists(COMMANDS_FULL_FILEPATH):
-            with open(COMMANDS_FULL_FILEPATH) as f:
-                f.write()
+            shutil.copy(COMMANDS_SOURCE_FULL_FILEPATH, COMMANDS_FULL_FILEPATH)
 
         # Open the User commands file
         self.window.open_file(COMMANDS_FULL_FILEPATH)
