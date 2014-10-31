@@ -9,7 +9,7 @@ COMMANDS_FULL_FILEPATH = path.join(SUBLIME_ROOT, COMMANDS_FILEPATH)
 
 COMMANDS_SOURCE_FULL_FILEPATH = path.abspath('default-prompt.json')
 
-class CommandsOpenCommand(sublime_plugin.WindowCommand):
+class CommandsOpenUserCommand(sublime_plugin.WindowCommand):
     def run(self):
         """Open `Packages/User/Commands.sublime-commands` for custom definitions"""
         # If the User commands doesn't exist, provide a prompt

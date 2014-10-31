@@ -17,14 +17,14 @@
                         [
                             {
                                 "caption": "Commands – Default",
-                                "command": "commands_open",
+                                "command": "open_file",
                                 "args": {
                                     "file": "${packages}/Default/Default.sublime-commands"
                                 }
                             },
                             {
                                 "caption": "Commands – User",
-                                "command": "commands_open"
+                                "command": "commands_open_user"
                             },
                             { "caption": "-" }
                         ]
