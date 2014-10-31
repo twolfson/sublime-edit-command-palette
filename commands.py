@@ -7,7 +7,8 @@ SUBLIME_ROOT = path.normpath(path.join(sublime.packages_path(), '..'))
 COMMANDS_FILEPATH = path.join('Packages', 'User', 'Commands.sublime-commands')
 COMMANDS_FULL_FILEPATH = path.join(SUBLIME_ROOT, COMMANDS_FILEPATH)
 
-COMMANDS_SOURCE_FULL_FILEPATH = path.abspath('default-prompt.json')
+# DEV: We must use `__file__` since ST3 executes from `Packages/` instead of `Packages/Commands/`
+COMMANDS_SOURCE_FULL_FILEPATH = path.normpath(path.join(__file__, '..', 'default-prompt.json'))
 
 class CommandsOpenUserCommand(sublime_plugin.WindowCommand):
     def run(self):
