@@ -1,4 +1,5 @@
 from os import path
+import shutil
 import sublime
 import sublime_plugin
 
