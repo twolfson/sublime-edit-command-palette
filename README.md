@@ -1,10 +1,10 @@
 # sublime-commands
 
-Make `Default` and `User` commands more accessible
+Add new commands to your Command Palette
 
-This plugin was created out of frustration that multiple plugin creators write key bindings but nothing for the command palette. This fixes that by making the `User's .sublime-commands` available via the command palette and menu.
+This plugin was created out of frustration that multiple plugin creators write key bindings but nothing for the command palette.
 
-![Screenshot](docs/screenshot.png)
+// TODO: Create a screenshot or GIF that shows defining a new command
 
 ## Getting Started
 ### Installation
