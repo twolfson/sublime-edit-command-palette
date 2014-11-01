@@ -4,7 +4,7 @@ Add new commands to your Command Palette
 
 This plugin was created out of frustration that multiple plugin creators write key bindings but nothing for the command palette.
 
-![Animation](https://cloud.githubusercontent.com/assets/902488/4872997/58deb1b4-61fc-11e4-8517-53c5a05adc68.gif)
+![Animation](https://cloud.githubusercontent.com/assets/902488/4873031/c49fc76a-61fe-11e4-966c-9a72f4c246ea.gif)
 
 ## Getting Started
 ### Installation
