@@ -21,5 +21,6 @@ class CommandsOpenUserCommand(sublime_plugin.WindowCommand):
         view = self.window.open_file(COMMANDS_FULL_FILEPATH)
 
         # If the syntax is plain text, move to JSON
-        if view.settings().get('syntax') == path.join('Packages', 'Text', 'Plain text.tmLanguage'):
-            view.set_syntax_file(path.join('Packages', 'JavaScript', 'JSON.tmLanguage'))
+        # DEV: Syntax paths always use `/`, even on Windows via https://github.com/wbond/package_control_channel/pull/3780#issuecomment-61369387
+        if view.settings().get('syntax') == 'Packages/Text/Plain text.tmLanguage':
+            view.set_syntax_file('Packages/JavaScript/JSON.tmLanguage')
