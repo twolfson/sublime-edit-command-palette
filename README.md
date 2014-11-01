@@ -22,7 +22,20 @@ import os; path=sublime.packages_path(); (os.makedirs(path) if not os.path.exist
 Packages can be uninstalled via "Package Control: Remove Package" via the command pallete, `ctrl+shift+p` on Windows/Linux, `command+shift+p` on Mac.
 
 ## Documentation
-### `commands_open_user(self)`
+### Command Palette
+`sublime-commands` provides 2 commands to access Sublime Text's commands:
+
+- `Preferences: Commands - Default` - Opens default commands provided by Sublime Text
+- `Preferences: Commands - User` - Opens custom user commands and provides prompt for first-timers
+
+### Menu
+`sublime-commands` defines 2 menu items under `Preferences -> Package Settings -> Commands`:
+
+- `Commands - Default` - Opens default commands provided by Sublime Text
+- `Commands - User` - Opens custom user commands and provides prompt for first-timers
+
+### API
+#### `commands_open_user(self)`
 `commands_open_user` creates a default `Packages/User/Commands.sublime-settings` containing a prompt for the user, opens it, and sets the language to JSON.
 
 We add in the default and language to make it more approachable. Otherwise, it would be an empty file and in plain text by default.
