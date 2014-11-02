@@ -1,5 +1,4 @@
 from os import path
-import string
 import sublime
 import sublime_plugin
 
@@ -21,8 +20,7 @@ DEFAULT_CONTENT = """[
 
 def plugin_loaded():
     """Once the plugin has loaded, define constants"""
-    C['SUBLIME_PACKAGES'] = sublime.packages_path()
-    C['SUBLIME_ROOT'] = path.normpath(path.join(C['SUBLIME_PACKAGES'], '..'))
+    C['SUBLIME_ROOT'] = path.normpath(path.join(sublime.packages_path(), '..'))
     C['COMMANDS_FILEPATH'] = path.join('Packages', 'User', 'Commands.sublime-commands')
     C['COMMANDS_FULL_FILEPATH'] = path.join(C['SUBLIME_ROOT'], C['COMMANDS_FILEPATH'])
 
