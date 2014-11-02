@@ -28,10 +28,10 @@ Packages can be uninstalled via "Package Control: Remove Package" via the comman
 - `Preferences: Commands - User` - Opens custom user commands and provides prompt for first-timers
 
 ### Menu
-`sublime-edit-command-palette` defines 2 menu items under `Preferences -> Package Settings -> Edit Command Palette`:
+`sublime-edit-command-palette` defines 2 menu items under `Preferences`:
 
-- `Edit Command Palette - Default` - Opens default commands provided by Sublime Text
-- `Edit Command Palette - User` - Opens custom user commands and provides prompt for first-timers
+- `Commands - Default` - Opens default commands provided by Sublime Text
+- `Commands - User` - Opens custom user commands and provides prompt for first-timers
 
 ## Documentation
 ### `edit_command_palette_open_user(self)`
