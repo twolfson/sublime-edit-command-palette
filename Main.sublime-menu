@@ -17,7 +17,7 @@
                         [
                             {
                                 "caption": "Commands – Default",
-                                "command": "open_file",
+                                "command": "commands_open_file",
                                 "args": {
                                     "file": "${packages}/Default/Default.sublime-commands"
                                 }

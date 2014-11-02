@@ -20,14 +20,22 @@ DEFAULT_CONTENT = """[
 
 def plugin_loaded():
     """Once the plugin has loaded, define constants"""
-    C['SUBLIME_ROOT'] = path.normpath(path.join(sublime.packages_path(), '..'))
+    C['SUBLIME_PACKAGES'] = sublime.packages_path()
+    C['SUBLIME_ROOT'] = path.normpath(path.join(C['SUBLIME_PACKAGES'], '..'))
     C['COMMANDS_FILEPATH'] = path.join('Packages', 'User', 'Commands.sublime-commands')
     C['COMMANDS_FULL_FILEPATH'] = path.join(C['SUBLIME_ROOT'], C['COMMANDS_FILEPATH'])
 
 
 class CommandsOpenFileCommand(sublime_plugin.WindowCommand):
-    def run(self, filepath):
+    def run(self, file):
         """Open a commands file with default JSON syntax"""
+        # Rename `file` to `filepath` to avoid confusing convention
+        # DEV: We are using `file` to be consistent with Sublime's `open_file` command
+        filepath = file
+
+        # Replace `${packages}` with package path
+        filepath = filepath.format(packages=C['SUBLIME_PACKAGES'])
+
         # Open the User commands file
         view = self.window.open_file(filepath)
 
