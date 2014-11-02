@@ -30,20 +30,15 @@ def plugin_loaded():
 class CommandsOpenFileCommand(sublime_plugin.WindowCommand):
     def run(self, file):
         """Open a commands file with default JSON syntax"""
-        # Rename `file` to `filepath` to avoid confusing convention
-        # DEV: We are using `file` to be consistent with Sublime's `open_file` command
-        filepath = file
-
-        # Replace `${packages}` with package path
-        # TODO: Is this Windows compatible?
-        filepath = filepath.replace('${packages}', C['SUBLIME_PACKAGES'])
-        # filepath = filepath.replace('/', os.sep)
-
-        # Open the User commands file
-        view = self.window.open_file(filepath)
+        # Open the commands file
+        # DEV: We use this because `${packages}` is not easy to resolve in ST3
+        self.window.run_command('open_file', {
+            'file': file,
+        })
 
         # If the syntax is plain text, move to JSON
         # DEV: Syntax paths always use `/`, even on Windows via https://github.com/wbond/package_control_channel/pull/3780#issuecomment-61369387
+        view = self.window.active_view()
         if view.settings().get('syntax') == 'Packages/Text/Plain text.tmLanguage':
             view.set_syntax_file('Packages/JavaScript/JSON.tmLanguage')
 
@@ -59,7 +54,7 @@ class CommandsOpenUserCommand(sublime_plugin.WindowCommand):
 
         # Open the commands file
         self.window.run_command('commands_open_file', {
-            'filepath': filepath,
+            'file': filepath,
         })
 
 
