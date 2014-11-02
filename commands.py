@@ -1,5 +1,5 @@
 from os import path
-from string import Template
+import string
 import sublime
 import sublime_plugin
 
@@ -35,7 +35,9 @@ class CommandsOpenFileCommand(sublime_plugin.WindowCommand):
         filepath = file
 
         # Replace `${packages}` with package path
-        filepath = Template(filepath.format(packages=C['SUBLIME_PACKAGES'])
+        # TODO: Is this Windows compatible?
+        filepath = string.replace(filepath, '${packages}', C['SUBLIME_PACKAGES'])
+        # filepath = string.replace(filepath, '/', os.sep)
 
         # Open the User commands file
         view = self.window.open_file(filepath)
