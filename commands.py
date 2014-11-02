@@ -1,10 +1,22 @@
 from os import path
-import shutil
 import sublime
 import sublime_plugin
 
-# Define dictionary for constants
+# Define dictionary for path constants and default content
 C = {}
+DEFAULT_CONTENT = """[
+    // Define your custom Sublime commands here
+    // Format is same as `key bindings` except replace `keys` with `caption`
+    // {
+    //     // Name to show in Command Palette
+    //     "caption": "File: New",
+    //     // Command to invoke
+    //     "command": "new_file",
+    //     // Optional keyword arguments to provide to command
+    //     "args": {"key": "value"}
+    // }
+]"""
+
 
 def plugin_loaded():
     """Once the plugin has loaded, define constants"""
