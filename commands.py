@@ -1,4 +1,5 @@
 from os import path
+from string import Template
 import sublime
 import sublime_plugin
 
@@ -34,7 +35,7 @@ class CommandsOpenFileCommand(sublime_plugin.WindowCommand):
         filepath = file
 
         # Replace `${packages}` with package path
-        filepath = filepath.format(packages=C['SUBLIME_PACKAGES'])
+        filepath = Template(filepath.format(packages=C['SUBLIME_PACKAGES'])
 
         # Open the User commands file
         view = self.window.open_file(filepath)
