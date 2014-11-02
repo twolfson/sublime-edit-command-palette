@@ -21,7 +21,7 @@ DEFAULT_CONTENT = """[
 def plugin_loaded():
     """Once the plugin has loaded, define constants"""
     C['SUBLIME_ROOT'] = path.normpath(path.join(sublime.packages_path(), '..'))
-    C['COMMANDS_FILEPATH'] = path.join('Packages', 'User', 'Commands.sublime-commands')
+    C['COMMANDS_FILEPATH'] = path.join('Packages', 'User', 'Default.sublime-commands')
     C['COMMANDS_FULL_FILEPATH'] = path.join(C['SUBLIME_ROOT'], C['COMMANDS_FILEPATH'])
 
 
@@ -43,7 +43,7 @@ class CommandsOpenFileCommand(sublime_plugin.WindowCommand):
 
 class CommandsOpenUserCommand(sublime_plugin.WindowCommand):
     def run(self):
-        """Open `Packages/User/Commands.sublime-commands` for custom definitions"""
+        """Open `Packages/User/Default.sublime-commands` for custom definitions"""
         # If the User commands doesn't exist, provide a prompt
         filepath = C['COMMANDS_FULL_FILEPATH']
         if not path.exists(filepath):
