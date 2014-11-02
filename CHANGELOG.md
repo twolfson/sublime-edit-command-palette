@@ -1,4 +1,6 @@
 # sublime-commands changelog
+1.3.0 - Added `commands_open_file` to open a commands file with desired syntax
+
 1.2.0 - Moved `default_prompt.json` into plugin to avoid ST3 packaging issues
 
 1.1.0 - Fixed up Windows, ST3, and documentation issues for Package Control submission
