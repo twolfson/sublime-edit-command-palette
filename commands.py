@@ -25,7 +25,7 @@ def plugin_loaded():
     C['COMMANDS_FULL_FILEPATH'] = path.join(C['SUBLIME_ROOT'], C['COMMANDS_FILEPATH'])
 
 
-class CommandsOpenFileCommand(sublime_plugin.WindowCommand):
+class EditCommandPaletteOpenFileCommand(sublime_plugin.WindowCommand):
     def run(self, file):
         """Open a commands file with default JSON syntax"""
         # Open the commands file
@@ -41,7 +41,7 @@ class CommandsOpenFileCommand(sublime_plugin.WindowCommand):
             view.set_syntax_file('Packages/JavaScript/JSON.tmLanguage')
 
 
-class CommandsOpenUserCommand(sublime_plugin.WindowCommand):
+class EditCommandPaletteOpenUserCommand(sublime_plugin.WindowCommand):
     def run(self):
         """Open `Packages/User/Default.sublime-commands` for custom definitions"""
         # If the User commands doesn't exist, provide a prompt
@@ -51,7 +51,7 @@ class CommandsOpenUserCommand(sublime_plugin.WindowCommand):
                 f.write(DEFAULT_CONTENT)
 
         # Open the commands file
-        self.window.run_command('commands_open_file', {
+        self.window.run_command('edit_command_palette_open_file', {
             'file': filepath,
         })
 

@@ -34,8 +34,8 @@ Packages can be uninstalled via "Package Control: Remove Package" via the comman
 - `Edit Command Palette - User` - Opens custom user commands and provides prompt for first-timers
 
 ## Documentation
-### `commands_open_user(self)`
-`commands_open_user` creates a default `Packages/User/Default.sublime-commands` containing a prompt for the user, opens it, and sets the language to JSON.
+### `edit_command_palette_open_user(self)`
+`edit_command_palette_open_user` creates a default `Packages/User/Default.sublime-commands` containing a prompt for the user, opens it, and sets the language to JSON.
 
 We add in the default and language to make it more approachable. Otherwise, it would be an empty file and in plain text by default.
 

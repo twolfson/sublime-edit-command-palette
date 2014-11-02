@@ -5,31 +5,19 @@
         "id": "preferences",
         "children":
         [
+            {"caption": "-"},
             {
-                "caption": "Package Settings",
-                "mnemonic": "P",
-                "id": "package-settings",
-                "children":
-                [
-                    {
-                        "caption": "Commands",
-                        "children":
-                        [
-                            {
-                                "caption": "Commands – Default",
-                                "command": "commands_open_file",
-                                "args": {
-                                    "file": "${packages}/Default/Default.sublime-commands"
-                                }
-                            },
-                            {
-                                "caption": "Commands – User",
-                                "command": "commands_open_user"
-                            }
-                        ]
-                    }
-                ]
-            }
+                "caption": "Commands – Default",
+                "command": "edit_command_palette_open_file",
+                "args": {
+                    "file": "${packages}/Default/Default.sublime-commands"
+                }
+            },
+            {
+                "caption": "Commands – User",
+                "command": "commands_open_user"
+            },
+            {"caption": "-"}
         ]
     }
 ]

@@ -1,13 +1,13 @@
 [
   {
     "caption": "Preferences: Commands - Default",
-    "command": "commands_open_file",
+    "command": "edit_command_palette_open_file",
     "args": {
         "file": "${packages}/Default/Default.sublime-commands"
     }
   },
   {
     "caption": "Preferences: Commands - User",
-    "command": "commands_open_user"
+    "command": "edit_command_palette_open_user"
   }
 ]
