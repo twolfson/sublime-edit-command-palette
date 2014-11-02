@@ -36,8 +36,8 @@ class CommandsOpenFileCommand(sublime_plugin.WindowCommand):
 
         # Replace `${packages}` with package path
         # TODO: Is this Windows compatible?
-        filepath = string.replace(filepath, '${packages}', C['SUBLIME_PACKAGES'])
-        # filepath = string.replace(filepath, '/', os.sep)
+        filepath = filepath.replace('${packages}', C['SUBLIME_PACKAGES'])
+        # filepath = filepath.replace('/', os.sep)
 
         # Open the User commands file
         view = self.window.open_file(filepath)
