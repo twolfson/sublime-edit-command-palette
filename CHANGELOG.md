@@ -1,4 +1,6 @@
 # sublime-edit-command-palette changelog
+2.1.0 - Repaired opening User commands on Windows. Fixed #2
+
 2.0.1 - Updated `install.md` to have `README.md's` rename changes
 
 2.0.0 - Renamed from `sublime-commands` to `sublime-edit-command-palette` to appease Package Control maintainers
