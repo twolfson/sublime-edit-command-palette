@@ -22,6 +22,7 @@ def plugin_loaded():
     """Once the plugin has loaded, define constants"""
     C['SUBLIME_ROOT'] = path.normpath(path.join(sublime.packages_path(), '..'))
     C['COMMANDS_FILEPATH'] = path.join('Packages', 'User', 'Default.sublime-commands')
+    C['COMMANDS_POSIX_FILEPATH'] = 'Packages/User/Default.sublime-commands'
     C['COMMANDS_FULL_FILEPATH'] = path.join(C['SUBLIME_ROOT'], C['COMMANDS_FILEPATH'])
 
 
@@ -52,7 +53,7 @@ class EditCommandPaletteOpenUserCommand(sublime_plugin.WindowCommand):
 
         # Open the commands file
         self.window.run_command('edit_command_palette_open_file', {
-            'file': filepath,
+            'file': C['COMMANDS_POSIX_FILEPATH'],
         })
 
 
